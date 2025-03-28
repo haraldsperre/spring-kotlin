@@ -23,17 +23,19 @@ open class ProjectConfig {
     }
 
     /*
-    Here in the below code, we are trying to wire or establish a relationship between Person and
-    Vehicle, by invoking the vehicle() bean method from person() bean method.
+    Here in the below code, we are trying to wire or establish a relationship between Person
+    and Vehicle, by passing the vehicle as a method parameter to the person() bean method.
 
-    Spring will make sure to have only 1 vehicle bean is created and also vehicle bean will
-    be created first always as person bean has dependency on it.
+    Spring injects the vehicle bean to the person bean using Dependency Injection. Spring will
+    make sure to have only 1 vehicle bean is created and also vehicle bean will be created
+    first always as person bean has dependency on it.
+
     * */
     @Bean
-    open fun person(): Person {
+    open fun person(vehicle: Vehicle): Person {
         val person = Person()
         person.setName("Lucy")
-        person.setVehicle(vehicle())
+        person.setVehicle(vehicle)
         return person
     }
 }
