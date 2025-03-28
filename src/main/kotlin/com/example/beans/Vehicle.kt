@@ -1,6 +1,9 @@
 package com.example.beans
 
 class Vehicle {
+    init {
+        println("Vehicle bean created by Spring")
+    }
 
     private var name: String? = null
 
@@ -10,4 +13,11 @@ class Vehicle {
         this.name = name
     }
 
+    fun printHello() {
+        println("Printing Hello from Component Vehicle Bean")
+    }
+
+    override fun toString(): String {
+        return "Vehicle name is - $name"
+    }
 }
