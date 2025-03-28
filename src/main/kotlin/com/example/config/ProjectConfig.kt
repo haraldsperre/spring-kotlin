@@ -19,26 +19,26 @@ open class ProjectConfig {
     value to the context.
     * */
     @Bean
-    open fun vehicle(): Vehicle {
+    open fun vehicle1(): Vehicle {
         val veh = Vehicle()
-        veh.setName("Audi 8")
+        veh.setName("Audi")
         return veh
     }
 
-    /*
-    The method names usually follow verbs notation.But for methods
-    which we will use to create beans, can use nouns as names.
-    This will be a good practise as the method names will become
-    bean names as well in the context.
-    * */
     @Bean
-    open fun hello(): String {
-        return "Hello, world!"
+    open fun vehicle2(): Vehicle {
+        val veh = Vehicle()
+        veh.setName("Honda")
+        return veh
     }
 
     @Bean
-    open fun number(): Int {
-        return 16
+    open fun vehicle3(): Vehicle {
+        val veh = Vehicle()
+        veh.setName("Ferrari")
+        return veh
     }
+
+
 
 }
