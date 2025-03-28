@@ -9,7 +9,8 @@ fun main() {
     val context = AnnotationConfigApplicationContext(ProjectConfig::class.java)
 
     val vehicle = context.getBean(Vehicle::class.java)
-    println("Primary Vehicle name from spring context is: ${vehicle.getName()}")
+    println("Primary Vehicle name from Spring context is: ${vehicle.getName()}")
     vehicle.printHello()
+    context.close()
 
 }
