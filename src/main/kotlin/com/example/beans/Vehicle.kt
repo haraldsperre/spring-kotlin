@@ -1,5 +1,8 @@
 package com.example.beans
 
+import org.springframework.stereotype.Component
+
+@Component
 class Vehicle {
 
     private var name: String? = null
@@ -8,5 +11,9 @@ class Vehicle {
 
     fun setName(name: String) {
         this.name = name
+    }
+
+    fun printHello() {
+        println("Printing Hello from Component Vehicle Bean")
     }
 }

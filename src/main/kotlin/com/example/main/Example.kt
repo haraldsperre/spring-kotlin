@@ -10,5 +10,6 @@ fun main() {
 
     val vehicle = context.getBean(Vehicle::class.java)
     println("Primary Vehicle name from spring context is: ${vehicle.getName()}")
+    vehicle.printHello()
 
 }
