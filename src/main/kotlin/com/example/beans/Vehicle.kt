@@ -1,11 +1,14 @@
 package com.example.beans
 
+import org.springframework.stereotype.Component
+
+@Component
 class Vehicle {
     init {
         println("Vehicle bean created by Spring")
     }
 
-    private var name: String? = null
+    private var name: String = "Toyota"
 
     fun getName() = name
 
