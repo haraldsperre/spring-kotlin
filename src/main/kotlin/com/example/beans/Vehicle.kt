@@ -10,7 +10,4 @@ class Vehicle {
         this.name = name
     }
 
-    fun printHello() {
-        println("Printing Hello from Component Vehicle Bean")
-    }
 }
