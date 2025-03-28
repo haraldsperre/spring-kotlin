@@ -18,27 +18,25 @@ open class ProjectConfig {
     this method when it initializes its context and adds the returned
     value to the context.
     * */
-    @Bean
+    @Bean(name=["audiVehicle"])
     open fun vehicle1(): Vehicle {
         val veh = Vehicle()
         veh.setName("Audi")
         return veh
     }
 
-    @Bean
+    @Bean(value = ["hondaVehicle"])
     open fun vehicle2(): Vehicle {
         val veh = Vehicle()
         veh.setName("Honda")
         return veh
     }
 
-    @Bean
+    @Bean("ferrariVehicle")
     open fun vehicle3(): Vehicle {
         val veh = Vehicle()
         veh.setName("Ferrari")
         return veh
     }
-
-
 
 }
