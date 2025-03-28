@@ -1,8 +1,5 @@
 package com.example.beans
 
-import org.springframework.stereotype.Component
-
-@Component
 class Vehicle {
     init {
         println("Vehicle bean created by Spring")

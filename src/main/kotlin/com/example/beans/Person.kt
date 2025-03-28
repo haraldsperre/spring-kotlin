@@ -1,10 +1,11 @@
 package com.example.beans
 
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.beans.factory.annotation.Qualifier
 import org.springframework.stereotype.Component
 
 @Component
-class Person @Autowired constructor(vehicle: Vehicle) {
+class Person @Autowired constructor(@Qualifier("vehicle2") vehicle: Vehicle) {
 
     private var name: String = "Lucy"
     private var vehicle: Vehicle? = vehicle
