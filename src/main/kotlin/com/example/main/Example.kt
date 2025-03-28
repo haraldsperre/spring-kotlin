@@ -11,4 +11,6 @@ fun main() {
 
     println("Person name from Spring Context is: ${person.getName()}")
     println("Vehicle that Person owns is: ${person.getVehicle()}")
+    person.getVehicle().getVehicleService().playMusic()
+    person.getVehicle().getVehicleService().moveVehicle()
 }

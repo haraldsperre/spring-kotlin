@@ -1,17 +1,21 @@
 package com.example.beans
 
-class Vehicle {
-    init {
-        println("Vehicle bean created by Spring")
-    }
+import com.example.services.VehicleServices
+import org.springframework.stereotype.Component
 
-    private var name: String = "Toyota"
+@Component(value="vehicleBean")
+class Vehicle(
+    private val vehicleServices: VehicleServices
+) {
+    private var name: String = "Honda"
 
     fun getName() = name
 
     fun setName(name: String) {
         this.name = name
     }
+
+    fun getVehicleService() = vehicleServices
 
     fun printHello() {
         println("Printing Hello from Component Vehicle Bean")
