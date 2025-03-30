@@ -9,6 +9,10 @@ class Vehicle(
 ) {
     private var name: String = "Honda"
 
+    init {
+        println("Vehicle Bean created by Spring")
+    }
+
     fun getName() = name
 
     fun setName(name: String) {

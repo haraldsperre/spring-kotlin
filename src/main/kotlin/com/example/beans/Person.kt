@@ -1,12 +1,17 @@
 package com.example.beans
 
+import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.context.annotation.Lazy
 import org.springframework.stereotype.Component
 
 @Component(value="personBean")
-class Person(
-    private val vehicle: Vehicle
-) {
+@Lazy
+class Person @Autowired constructor(private val vehicle: Vehicle) {
     private var name: String = "Lucy"
+
+    init {
+        println("Person bean created by Spring")
+    }
 
     fun getName() = name
 
