@@ -2,6 +2,7 @@ package com.example.config
 
 import org.springframework.context.annotation.ComponentScan
 import org.springframework.context.annotation.Configuration
+import org.springframework.context.annotation.EnableAspectJAutoProxy
 
 /*
 Spring @Configuration annotation is part of the spring core framework.
@@ -14,6 +15,7 @@ with stereotype annotations, we use the @ComponentScan annotation over the
 configuration class.
 * */
 @Configuration
-@ComponentScan(basePackages = ["com.example.implementation", "com.example.services"])
-@ComponentScan(basePackageClasses = [com.example.beans.Person::class, com.example.beans.Vehicle::class])
+@ComponentScan(basePackages = ["com.example.implementation",
+    "com.example.services", "com.example.aspects"])
+@EnableAspectJAutoProxy
 open class ProjectConfig

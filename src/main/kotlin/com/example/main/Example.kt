@@ -1,7 +1,7 @@
 package com.example.main
 
-import com.example.beans.Person
 import com.example.config.ProjectConfig
+import com.example.model.Song
 import com.example.services.VehicleServices
 import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
@@ -9,15 +9,15 @@ fun main() {
 
     val context = AnnotationConfigApplicationContext(ProjectConfig::class.java)
 
-    val vehicleServices1 = context.getBean(VehicleServices::class.java)
-    val vehicleServices2 = context.getBean(VehicleServices::class.java)
+    val vehicleServices = context.getBean(VehicleServices::class.java)
+    println(vehicleServices.javaClass)
 
-    println("Object hashCode of vehicleServices1: ${vehicleServices1.hashCode()}")
-    println("Object hashCode of vehicleServices2: ${vehicleServices2.hashCode()}")
+    val song = Song()
+    song.setTitle("Blank Space")
+    song.setSingerName("Taylor Swift")
+    val vehicleStarted = true
 
-    if (vehicleServices1 == vehicleServices2) {
-        println("Vehicle Services is Singleton Scope")
-    } else {
-        println("Vehicle Services is Prototype Scope")
-    }
+    val moveVehicleStatus = vehicleServices.moveVehicle(vehicleStarted)
+    val playMusicStatus = vehicleServices.playMusic(vehicleStarted, song)
+    val applyBrakeStatus = vehicleServices.applyBrakes(vehicleStarted)
 }
